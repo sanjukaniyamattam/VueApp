@@ -6,35 +6,44 @@
         <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email">Name:</label>
           <div class="col-sm-10">
-          <input type="email" class="form-control" id="email" placeholder="Enter Name">
+          <input type="email" class="form-control" id="email" placeholder="Enter Name" v-model="formData.name">
           </div>
         </div>
 
         <div class="form-group marginB" >
           <label class="control-label col-sm-2" for="email">Age:</label>
           <div class="col-sm-10">
-          <input type="email" class="form-control" id="email" placeholder="Enter Age">
+          <input type="text" class="form-control" id="email" placeholder="Enter Age" v-model="formData.age">
           </div>
         </div>
 
         <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email">Interest:</label>
           <div class="col-sm-10">
-          <input type="email" class="form-control" id="email" placeholder="Enter Interest">
+          <select name="interest" v-model="formData.interest">
+            <option value="">Select Interest</option>
+            <option value="Car">Car</option>
+            <option value="Suv">SUV</option>
+            <option value="Truck">Truck</option>
+            <option value="Bus">Truck</option>
+          </select>
           </div>
         </div>
 
         <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email">Model:</label>
           <div class="col-sm-10">
-          <input type="email" class="form-control" id="email" placeholder="Enter Model">
+          <input type="checkbox" v-model="formData.models" name="model" value="M-1"> M-1 <br>
+          <input type="checkbox" v-model="formData.models" name="model" value="M-2"> M-2 <br>
+          <input type="checkbox" v-model="formData.models" name="model" value="M-3"> M-3 <br>
+          <input type="checkbox" v-model="formData.models" name="model" value="M-4"> M-4 <br>
           </div>
         </div>
 
         <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email"></label>
           <div class="col-sm-10">
-          <button type="submit" class="btn btn-default">Save</button>
+          <button type="submit" class="btn btn-default" v-on:click="leadSave();" >Save</button>
           </div>
         </div>
 
@@ -45,16 +54,32 @@
 
 <script>
 import DashLayout from './DashLayout'
+import bus from '../main'
 
 export default {
-  name: 'HelloWorld2',
+  name: 'LeadAdd',
   components:{
     DashLayout
   },
 
   data () {
+    // return {
+    //   msg: 'Welcome to Your Vue.js App'
+    // }
     return {
-      msg: 'Welcome to Your Vue.js App'
+      formData:{
+        name: '',
+        age:'',
+        models:[],
+        interest:[]
+      }
+    }
+  },
+
+  methods:{
+    leadSave(){
+      //this.$emit('addlead', this.formData)
+      this.$store.dispatch('addLead', this.formData);
     }
   }
 }

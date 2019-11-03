@@ -14,7 +14,7 @@
 import DashLayout from './DashLayout'
 
 export default {
-  name: 'HelloWorld2',
+  name: 'DashBoard',
   components:{
     DashLayout
   },

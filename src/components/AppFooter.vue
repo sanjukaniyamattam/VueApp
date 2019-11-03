@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld2',
+  name: 'AppFooter',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

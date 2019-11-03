@@ -21,7 +21,7 @@ import AppBody from './AppBody'
 import AppFooter from './AppFooter'
 
 export default {
-  name: 'HelloWorld2',
+  name: 'DashLayout',
   components:{
     AppHeader, AppSidemenu, AppBody, AppFooter  
   },

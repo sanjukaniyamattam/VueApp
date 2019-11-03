@@ -27,29 +27,25 @@
 
 <script>
 import DashLayout from './DashLayout'
+import bus from '../main'
 
 export default {
-  name: 'HelloWorld2',
+  name: 'Leadmanage',
   components:{
     DashLayout
   },
   data () {
       return{
-        leadsData:[
-          {
-              name:'Sanju', Age: '20',interest: 'Car', model: 'GolfR'
-          },
-          {
-              name:'Sanju', Age: '20',interest: 'Car', model: 'GolfR'
-          },
-          {
-              name:'Sanju', Age: '20',interest: 'Car', model: 'GolfR'
-          },
-          {
-              name:'Sanju', Age: '20',interest: 'Car', model: 'GolfR'
-          }
-        ]
+        
       }
+  },
+  created:{
+    
+  },
+  computed:{
+    leadsData(){
+      return this.$store.getters.getLeadsdata;
+    }
   }
 }
 </script>

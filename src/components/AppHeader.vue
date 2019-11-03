@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld2',
+  name: 'AppHeader',
   data () {
     return {
       msg: 'Welcome To Skoda'

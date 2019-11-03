@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld2',
+  name: 'AppSidemenu',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
