@@ -80,6 +80,7 @@ export default {
     leadSave(){
       //this.$emit('addlead', this.formData)
       this.$store.dispatch('addLead', this.formData);
+      this.$router.push('LeadManage'); 
     }
   }
 }
