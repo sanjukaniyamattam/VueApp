@@ -13,22 +13,22 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'Lgoin',
       component: Login
     },
     {
       path: '/Dash',
-      name: 'HelloWorld',
+      name: 'DashBoard',
       component: DashBoard
     },
     {
       path: '/LeadAdd',
-      name: 'HelloWorld',
+      name: 'LeadAdd',
       component: LeadAdd
     },
     {
       path: '/LeadManage',
-      name: 'HelloWorld',
+      name: 'LeadManage',
       component: LeadManage
     }
   ]

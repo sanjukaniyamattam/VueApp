@@ -4,12 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import {store} from './store/store'
+import axios from 'axios'
 
-const bus = new Vue();
+Vue.prototype.$http = axios;
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
+  axios: axios,
   store: store,
   el: '#app',
   router,
