@@ -10,6 +10,13 @@
           </div>
         </div>
 
+        <div class="form-group marginB">
+          <label class="control-label col-sm-2" for="email">Email:</label>
+          <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" placeholder="Enter Email" v-model="formData.email">
+          </div>
+        </div>
+
         <div class="form-group marginB" >
           <label class="control-label col-sm-2" for="email">Age:</label>
           <div class="col-sm-10">
@@ -20,25 +27,16 @@
         <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email">Interest:</label>
           <div class="col-sm-10">
-          <select name="interest" v-model="formData.interest">
-            <option value="">Select Interest</option>
+          <select name="interest" class="form-control" v-model="formData.interest">
             <option value="Car">Car</option>
             <option value="Suv">SUV</option>
             <option value="Truck">Truck</option>
-            <option value="Bus">Truck</option>
+            <option value="Bus">Bus</option>
           </select>
           </div>
         </div>
 
-        <div class="form-group marginB">
-          <label class="control-label col-sm-2" for="email">Model:</label>
-          <div class="col-sm-10">
-          <input type="checkbox" v-model="formData.models" name="model" value="M-1"> M-1 <br>
-          <input type="checkbox" v-model="formData.models" name="model" value="M-2"> M-2 <br>
-          <input type="checkbox" v-model="formData.models" name="model" value="M-3"> M-3 <br>
-          <input type="checkbox" v-model="formData.models" name="model" value="M-4"> M-4 <br>
-          </div>
-        </div>
+        
 
         <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email"></label>
@@ -69,9 +67,9 @@ export default {
     return {
       formData:{
         name: '',
+        email: '',
         age:'',
-        models:[],
-        interest:[]
+        interest:''
       }
     }
   },

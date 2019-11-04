@@ -6,16 +6,16 @@
             <table>
                 <tr bgcolor="#cccccc" >
                     <td><strong>Name</strong></td>
+                    <td><strong>Email</strong></td>
                     <td><strong>Age</strong></td>
                     <td><strong>Interest</strong></td>
-                    <td><strong>Model</strong></td>
                 </tr>
 
                 <tr v-for="(lead, index) in leadsData" :key="index">
                     <td>{{lead.name}}</td>
+                    <td>{{lead.email}}</td>
                     <td>{{lead.Age}}</td>
                     <td>{{lead.interest}}</td>
-                    <td>{{lead.model}}</td>
                 </tr>
 
             </table>    
