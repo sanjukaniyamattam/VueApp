@@ -9,13 +9,15 @@
                     <td><strong>Email</strong></td>
                     <td><strong>Age</strong></td>
                     <td><strong>Interest</strong></td>
+                    <td><strong>Action</strong></td>
                 </tr>
 
                 <tr v-for="(lead, index) in leadsData" :key="index">
                     <td>{{lead.name}}</td>
                     <td>{{lead.email}}</td>
-                    <td>{{lead.Age}}</td>
+                    <td>{{lead.age}}</td>
                     <td>{{lead.interest}}</td>
+                    <td><router-link :to="{ name: 'LeadEdit', params: {id:lead.id}}">Edit</router-link></td>
                 </tr>
 
             </table>    
@@ -39,16 +41,7 @@ export default {
     }
   },
   mounted () {
-    this.$http
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then(response => {
-        this.info = response.data.bpi
-      })
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
-      .finally(() => this.loading = false)
+    this.$store.dispatch('getCurrentprice', '');
   }
   
 }

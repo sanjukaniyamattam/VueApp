@@ -4,37 +4,30 @@
     <DashLayout>
 
         <div class="form-group marginB">
-          <label class="control-label col-sm-2" for="email">Id:</label>
-          <div class="col-sm-10">
-          <input type="email" class="form-control" id="id" placeholder="Enter Id" v-model="formData.id">
-          </div>
-        </div>
-
-        <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email">Name:</label>
           <div class="col-sm-10">
-          <input type="email" class="form-control" id="email" placeholder="Enter Name" v-model="formData.name">
+          <input type="email" class="form-control" id="email" placeholder="Enter Name" v-model="leadData.name">
           </div>
         </div>
 
         <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email">Email:</label>
           <div class="col-sm-10">
-          <input type="email" class="form-control" id="email" placeholder="Enter Email" v-model="formData.email">
+          <input type="email" class="form-control" id="email" placeholder="Enter Email" v-model="leadData.email">
           </div>
         </div>
 
         <div class="form-group marginB" >
           <label class="control-label col-sm-2" for="email">Age:</label>
           <div class="col-sm-10">
-          <input type="text" class="form-control" id="email" placeholder="Enter Age" v-model="formData.age">
+          <input type="text" class="form-control" id="email" placeholder="Enter Age" v-model="leadData.age">
           </div>
         </div>
 
         <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email">Interest:</label>
           <div class="col-sm-10">
-          <select name="interest" class="form-control" v-model="formData.interest">
+          <select name="interest" class="form-control" v-model="leadData.interest">
             <option value="Car">Car</option>
             <option value="Suv">SUV</option>
             <option value="Truck">Truck</option>
@@ -68,16 +61,12 @@ export default {
   },
 
   data () {
-    // return {
-    //   msg: 'Welcome to Your Vue.js App'
-    // }
     return {
-      formData:{
-        id: '',
-        name: '',
-        email: '',
-        age:'',
-        interest:''
+      user:{
+          name: '',
+          email: '',
+          age:'',
+          interest:''
       }
     }
   },
@@ -87,9 +76,21 @@ export default {
       //this.$emit('addlead', this.formData)
       this.$store.dispatch('addLead', this.formData);
       this.$router.push('LeadManage'); 
+    },
+    
+  },
+  computed:{
+    MapLeadsData(){
+      return this.$store.getters.getLeadsdata;
+    },
+    leadData(){
+      // return this.MapLeadsData.find(v => v.id == this.$route.params.id);
+      const filteredData = this.MapLeadsData.find(v => v.id == this.$route.params.id);
+      return this.user = Object.assign({}, filteredData);
     }
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

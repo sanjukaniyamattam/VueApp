@@ -4,7 +4,7 @@ import Login from '@/components/Login'
 import DashBoard from '@/components/DashBoard'
 import LeadAdd from '@/components/LeadAdd'
 import LeadManage from '@/components/LeadManage'
-// import LeadManage from '@components/LeadAdd'
+import LeadEdit from '@/components/LeadEdit'
 
 
 Vue.use(Router)
@@ -30,6 +30,12 @@ export default new Router({
       path: '/LeadManage',
       name: 'LeadManage',
       component: LeadManage
+    },
+    {
+      path: '/LeadEdit/:id/edit',
+      name: 'LeadEdit',
+      component: LeadEdit,
+      params:true
     }
   ]
 })
