@@ -30,11 +30,28 @@ export const store = new Vuex.Store({
                 email: payload.email
             }
             state.leadsData.push(newLead);
+        },
+        updateLead: (state, payload) =>{
+            //console.log(payload.id);
+            let idToUpdate = payload.id;
+
+            state.leadsData.find((item, index) =>{
+                if(item.id == idToUpdate){
+            
+                state.leadsData[index].name=payload.name;
+                state.leadsData[index].age=payload.age;
+                state.leadsData[index].interest=payload.interest;
+                state.leadsData[index].email=payload.email;
+            }
+            });
         }
     },
     actions:{
         addLead:(context, payload)=>{
             context.commit('addLead', payload);
+        },
+        updateLead:(context, payload)=>{
+            context.commit('updateLead', payload);
         },
         getCurrentprice: (context, payload)=> {
             axios

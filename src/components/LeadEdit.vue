@@ -41,7 +41,7 @@
         <div class="form-group marginB">
           <label class="control-label col-sm-2" for="email"></label>
           <div class="col-sm-10">
-          <button type="submit" class="btn btn-default" v-on:click="leadSave();" >Save</button>
+          <button type="submit" class="btn btn-default" v-on:click="leadUpdate();" >Save</button>
           </div>
         </div>
 
@@ -62,7 +62,7 @@ export default {
 
   data () {
     return {
-      user:{
+      formData:{
           name: '',
           email: '',
           age:'',
@@ -72,10 +72,10 @@ export default {
   },
 
   methods:{
-    leadSave(){
+    leadUpdate(){
       //this.$emit('addlead', this.formData)
-      this.$store.dispatch('addLead', this.formData);
-      this.$router.push('LeadManage'); 
+      this.$store.dispatch('updateLead', this.formData);
+      this.$router.push('/LeadManage'); 
     },
     
   },
@@ -86,7 +86,7 @@ export default {
     leadData(){
       // return this.MapLeadsData.find(v => v.id == this.$route.params.id);
       const filteredData = this.MapLeadsData.find(v => v.id == this.$route.params.id);
-      return this.user = Object.assign({}, filteredData);
+      return this.formData = Object.assign({}, filteredData);
     }
   }
 }
