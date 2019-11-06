@@ -5,7 +5,7 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="./../assets/logo.png" id="icon" alt="User Icon" width="100px" height="200px" />
+      <img src="./../../assets/logo.png" id="icon" alt="User Icon" width="100px" height="200px" />
     </div>
 
     <!-- Login Form -->

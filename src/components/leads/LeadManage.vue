@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import DashLayout from './DashLayout'
+import DashLayout from './../DashLayout'
 
 export default {
   name: 'Leadmanage',

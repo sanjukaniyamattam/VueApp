@@ -51,8 +51,7 @@
 </template>
 
 <script>
-import DashLayout from './DashLayout'
-import bus from '../main'
+import DashLayout from './../DashLayout'
 
 export default {
   name: 'LeadAdd',

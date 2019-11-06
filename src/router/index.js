@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/Login'
-import DashBoard from '@/components/DashBoard'
-import LeadAdd from '@/components/LeadAdd'
-import LeadManage from '@/components/LeadManage'
-import LeadEdit from '@/components/LeadEdit'
+import Login from '@/components/login/Login'
+import DashBoard from '@/components/dashboard/DashBoard'
+import LeadAdd from '@/components/leads/LeadAdd'
+import LeadManage from '@/components/leads/LeadManage'
+import LeadEdit from '@/components/leads/LeadEdit'
 
 
 Vue.use(Router)
