@@ -11,17 +11,22 @@ export const store = new Vuex.Store({
             {id:'100', name:'Sanju', age: '20',interest: 'Car', email: 'sanju.r@katzion.com'},
             {id:'101', name:'Alex', age: '21',interest: 'Car', email: 'sanju.r@katzion.com'},
             {id:'102', name:'Umesh', age: '22',interest: 'Car', email: 'sanju.r@katzion.com'},
-        ]
+        ],
+        galleryImages:[],
+
     },
     getters:{
         getLeadsdata: state =>{
             return state.leadsData;
+        },
+        getImages:(state)=>{
+            return state.galleryImages;
         }
     },
     mutations:{
         addLead: (state, payload) =>{
             //state.leadsData
-            console.log(payload);
+            //console.log(payload);
             let newLead={
                 id:payload.id, 
                 name:payload.name, 
@@ -44,6 +49,10 @@ export const store = new Vuex.Store({
                 state.leadsData[index].email=payload.email;
             }
             });
+        },
+        listImages:(state, payload)=>{
+            //console.log(payload);
+            state.galleryImages = payload;
         }
     },
     actions:{
@@ -53,17 +62,18 @@ export const store = new Vuex.Store({
         updateLead:(context, payload)=>{
             context.commit('updateLead', payload);
         },
-        getCurrentprice: (context, payload)=> {
-            axios
-              .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-              .then(response => {
-                this.info = response.data.bpi
-              })
-              .catch(error => {
-                console.log(error)
-                this.errored = true
-              })
-              .finally(() => this.loading = false)
-          }
+        getImages:(context,payload) => {
+            fetch('http://dummy.restapiexample.com/api/v1/employees')
+            .then(response =>{
+                return response.json(); //return promise
+            })
+            .then((data)=>{
+                //console.log(data);
+                context.commit('listImages',data);
+            })
+            .catch((err)=>{
+                console.error(err);
+            })
+        }
     }
 })

@@ -9,15 +9,15 @@
                     <td><strong>Email</strong></td>
                     <td><strong>Age</strong></td>
                     <td><strong>Interest</strong></td>
-                    <td><strong>Action</strong></td>
+                    <td><strong></strong></td>
                 </tr>
 
-                <tr v-for="(lead, index) in leadsData" :key="index">
-                    <td>{{lead.name}}</td>
-                    <td>{{lead.email}}</td>
-                    <td>{{lead.age}}</td>
-                    <td>{{lead.interest}}</td>
-                    <td><router-link :to="{ name: 'LeadEdit', params: {id:lead.id}}">Edit</router-link></td>
+                <tr v-for="(image, index) in getallImages" :key="index">
+                    <td>{{image.employee_name}}</td>
+                    <td>{{image.employee_salary}}</td>
+                    <td>{{image.employee_age}}</td>
+                    <td>{{image.title}}</td>
+                    <td></td>
                 </tr>
 
             </table>    
@@ -31,15 +31,18 @@
 import DashLayout from './../DashLayout'
 
 export default {
-  name: 'Leadmanage',
+  name: 'imagemanage',
   components:{
     DashLayout
   },
   computed:{
-    leadsData(){
-      return this.$store.getters.getLeadsdata;
+    getallImages(){
+      return this.$store.getters.getImages;
     }
   },
+  mounted(){
+    this.$store.dispatch('getImages', '')
+  }
   
 }
 </script>

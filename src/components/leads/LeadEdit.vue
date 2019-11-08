@@ -85,7 +85,7 @@ export default {
     leadData(){
       // return this.MapLeadsData.find(v => v.id == this.$route.params.id);
       const filteredData = this.MapLeadsData.find(v => v.id == this.$route.params.id);
-      return this.formData = Object.assign({}, filteredData);
+      return this.formData = {...filteredData}; // return this.formData = Object.assign({}, filteredData);
     }
   }
 }

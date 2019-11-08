@@ -6,6 +6,7 @@
           <li><router-link to="/Dash">Home</router-link></li>
           <li><router-link to="/LeadAdd">Add Lead</router-link></li>
           <li><router-link to="/LeadManage">Manage Lead</router-link></li>
+          <li><router-link to="/Gallery">Images</router-link></li>
         </ul>
     </nav>
 
