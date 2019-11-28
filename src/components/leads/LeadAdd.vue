@@ -83,12 +83,18 @@ export default {
 
   methods:{
     leadSave(){
+
+      this.$notify({ group: 'foo', text: 'Wrong password, please try again later' })
       //this.$emit('addlead', this.formData)
       this.$store.dispatch('addLead', this.formData);
       this.$router.push('LeadManage'); 
     }
-  }
+  },
+
+  
 }
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

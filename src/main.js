@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import {store} from './store/lead/store'
 import axios from 'axios'
+import Notifications from 'vue-notification'
 
+Vue.use(Notifications);
 Vue.prototype.$http = axios;
 
 Vue.config.productionTip = false
